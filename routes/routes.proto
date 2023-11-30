@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "github.com/arabassa/grpc-routes;grpc_routes";
+
+package routes;
+
+// The Get Route service definition.
+service GetRoutes {
+    // Sends a route table
+    rpc  SendRoutes (RoutesRequest) returns (RoutesReply) {}
+}
+
+// The request message containing the IP destination
+message RoutesRequest {
+    string  destination = 1;
+}
+
+// The request response containing the route table 
+message RoutesReply {
+    string routetable = 1;
+}
